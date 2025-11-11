@@ -2,19 +2,20 @@ body {
   background: #a56ef4;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   padding-top: 120px;
   font-family: Arial, sans-serif;
+  overflow-x: auto;        /* allow horizontal scroll */
+  width: 100%;
 }
 
 #buttons {
   display: flex;
   gap: 40px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-wrap: nowrap;        /* force single line */
+  justify-content: flex-start; /* left align so nothing gets cut */
+  width: max-content;       /* expand container inside body */
+  padding-left: 40px;       /* small left padding to avoid cut */
 }
 
 .btn,
@@ -27,10 +28,5 @@ body {
   border: none;
   cursor: pointer;
   text-transform: lowercase;
-  transition: transform 0.2s;
-}
-
-.btn:hover,
-.stop:hover {
-  transform: scale(1.1);
+  white-space: nowrap;
 }
