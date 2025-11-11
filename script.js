@@ -1,19 +1,16 @@
 // your JS code here
 
-// List of sound files (without extension)
-const sounds = ["sound1", "sound2", "sound3", "sound4"];  
-// Add your actual sound file names (e.g., dog, piano, drum)
+// Sound names as shown in your screenshot
+const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
 
-
-// Create container div with id="buttons"
+// Create container for buttons
 const container = document.createElement("div");
 container.id = "buttons";
 document.body.appendChild(container);
 
-// Create audio elements dynamically
 let currentAudio = null;
 
-// Function to stop all sounds
+// Function to stop sound
 function stopAudio() {
     if (currentAudio) {
         currentAudio.pause();
@@ -22,14 +19,14 @@ function stopAudio() {
     }
 }
 
-// Create buttons for each sound
+// Create a button for each sound
 sounds.forEach(sound => {
     const btn = document.createElement("button");
     btn.className = "btn";
     btn.innerText = sound;
 
     btn.addEventListener("click", () => {
-        stopAudio(); 
+        stopAudio();
         const audio = new Audio(`./sounds/${sound}.mp3`);
         currentAudio = audio;
         audio.play();
@@ -41,7 +38,7 @@ sounds.forEach(sound => {
 // Create STOP button
 const stopBtn = document.createElement("button");
 stopBtn.className = "stop";
-stopBtn.innerText = "Stop";
+stopBtn.innerText = "stop";
 
 stopBtn.addEventListener("click", stopAudio);
 
