@@ -26,6 +26,7 @@ body {
   font-size: 20px;
   border-radius: 10px;
   border: none;
+	margin-right: 40px;
   cursor: pointer;
   text-transform: lowercase;
   white-space: nowrap;
